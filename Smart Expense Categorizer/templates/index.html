@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #0077b6, #48cae4);
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .avatar-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 10px 20px;
+      gap: 12px;
+    }
+
+    .auth-btn {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-weight: 600;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .auth-btn:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      color: #000;
+      text-decoration: none;
+    }
+
+    .avatar-container img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .card-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card-option {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #fff;
+      border-radius: 20px;
+      transition: all 0.3s ease-in-out;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-option:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-title {
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+
+    .card-text {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .nav-title {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 3rem;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+
+    .btn {
+      font-weight: 600;
+      padding: 0.6rem 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="avatar-container">
+    <a href="{{ url_for('login') }}" class="auth-btn">Login</a>
+    <a href="{{ url_for('signup') }}" class="auth-btn">Sign Up</a>
+    <img src="https://i.pravatar.cc/60?img=8" alt="User Avatar">
+  </div>
+
+  <div class="container text-center mt-5">
+    <div class="nav-title mb-4">Welcome to Expense Tracker</div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4">
+        <div class="card card-option">
+          <div class="card-body">
+            <h5 class="card-title">Enter Your Expenses</h5>
+            <p class="card-text">Log your daily expenses with category, date, and amount.</p>
+            <a href="{{ url_for('add_expense') }}" style="color: rgb(7, 45, 10);">Add Expense</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card card-option">
+          <div class="card-body">
+            <h5 class="card-title">Track Your Expenses</h5>
+            <p class="card-text">View a history of all your past expenses.</p>
+            <a href="{{ url_for('track_expense') }}" style="color: rgb(9, 53, 12);">Track Expenses</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card card-option">
+          <div class="card-body">
+            <h5 class="card-title">Summary </h5>
+            <p class="card-text">Manage and monitor your budget limits by category.</p>
+            <a href="{{ url_for('summary') }}" style="color: rgb(8, 43, 10);">View Summary</a>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <script>
+    console.log("Expense Tracker Navigation Page Loaded");
+  </script>
+</body>
+</html>
